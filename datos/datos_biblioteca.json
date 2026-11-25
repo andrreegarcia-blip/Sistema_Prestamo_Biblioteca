@@ -1,0 +1,26 @@
+{
+    "libros": [
+        {
+            "codigo": "l001",
+            "titulo": "el prinncipito",
+            "autor": "Antoine de Saint-Exupéry",
+            "disponible": true
+        }
+    ],
+    "lectores": [
+        {
+            "codigo": "E001",
+            "nombre": "Juan Perez"
+        }
+    ],
+    "prestamos": [
+        {
+            "codigo_libro": "l001",
+            "codigo_lector": "E001",
+            "fecha_prestamo": "2026-11-25",
+            "fecha_devolucion": "2026-12-02",
+            "estado": "Devuelto",
+            "multa": 0.0
+        }
+    ]
+}
