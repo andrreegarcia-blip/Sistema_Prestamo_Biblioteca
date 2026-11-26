@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lectores - Biblioteca Comunal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="contenedor">
+
+       <aside class="menu">
+    <h2>📚 Biblioteca</h2>
+    <a href="/">🏠 Inicio</a>
+    <a href="/libros">📖 Libros</a>
+    <a href="/lectores">👥 Lectores</a>
+    <a href="/prestamos">📋 Préstamos</a>
+    <a href="/devoluciones">↩️ Devoluciones</a>
+       </aside>
+
+        <main class="contenido">
+            <h1>Gestión de lectores</h1>
+
+            <form action="/registrar_lector" method="POST">
+                <input type="text" name="codigo" placeholder="Código del lector" required>
+                <input type="text" name="nombre" placeholder="Nombre del lector" required>
+                <button type="submit">➕ Registrar lector</button>
+            </form>
+
+            <p class="subtitulo">Administración de los lectores de la biblioteca.</p>
+
+            <div class="bienvenida">
+                <h2>👥 Lectores registrados</h2>
+
+                {% if lectores %}
+                <table border="1" cellpadding="10" cellspacing="0" width="100%">
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                    </tr>
+
+                    {% for lector in lectores %}
+                    <tr>
+                        <td>{{ lector.codigo }}</td>
+                        <td>{{ lector.nombre }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% else %}
+                    <p>Todavía no hay lectores registrados.</p>
+                {% endif %}
+            </div>
+        </main>
+
+    </div>
+
+</body>
+</html>

@@ -73,6 +73,26 @@ def registrar_lector(codigo: str, nombre: str) -> str:
 def obtener_libros() -> list:
     """Devuelve la lista de libros registrados."""
     return libros
+def eliminar_libro(codigo: str) -> str:
+    """Elimina un libro si no tiene préstamos activos."""
+
+    libro = next(
+        (l for l in libros if l["codigo"] == codigo), None
+    )
+
+    if libro is None:
+        return "El libro no existe."
+
+    if any(
+        p["codigo_libro"] == codigo and p["estado"] == "Activo"
+        for p in prestamos
+    ):
+        return "No se puede eliminar: el libro tiene un préstamo activo."
+
+    libros.remove(libro)
+    guardar_datos()
+
+    return "Libro eliminado correctamente."
 
 
 def obtener_lectores() -> list:

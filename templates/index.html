@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Comunal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="contenedor">
+
+        <aside class="menu">
+            <h2>📚 Biblioteca</h2>
+            <a href="/">🏠 Inicio</a>
+            <a href="/libros">📖 Libros</a>
+            <a href="/lectores">👥 Lectores</a>
+            <a href="/prestamos">📋 Préstamos</a>
+            <a href="/devoluciones">↩️ Devoluciones</a>
+        </aside>
+
+        <main class="contenido">
+            <h1>Panel principal</h1>
+            <p class="subtitulo">Sistema de gestión de la Biblioteca Comunal</p>
+
+            <div class="tarjetas">
+                <div class="tarjeta">
+                    <h3>Libros registrados</h3>
+                    <p>📚</p>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>Lectores registrados</h3>
+                    <p>👥</p>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>Préstamos</h3>
+                    <p>📋</p>
+                </div>
+            </div>
+
+            <div class="bienvenida">
+                <h2>¡Bienvenido!</h2>
+                <p>Desde aquí podrás gestionar los libros, lectores, préstamos y devoluciones de la biblioteca.</p>
+            </div>
+        </main>
+
+    </div>
+
+</body>
+</html>

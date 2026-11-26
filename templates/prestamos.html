@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Préstamos - Biblioteca Comunal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="contenedor">
+
+        <aside class="menu">
+            <h2>📚 Biblioteca</h2>
+            <a href="/">🏠 Inicio</a>
+            <a href="/libros">📖 Libros</a>
+            <a href="/lectores">👥 Lectores</a>
+            <a href="/prestamos">📋 Préstamos</a>
+            <a href="/devoluciones">↩️ Devoluciones</a>
+        </aside>
+
+        <main class="contenido">
+            <h1>Gestión de préstamos</h1>
+            <p class="subtitulo">Administración de los préstamos de libros.</p>
+
+<div class="bienvenida">
+    <h2>📋 Registrar préstamo</h2>
+
+    <form action="/registrar_prestamo" method="POST">
+
+        <select name="codigo_libro" required>
+            <option value="">Seleccionar libro</option>
+            {% for libro in libros %}
+                {% if libro.disponible %}
+                    <option value="{{ libro.codigo }}">
+                        {{ libro.titulo }}
+                    </option>
+                {% endif %}
+            {% endfor %}
+        </select>
+
+        <select name="codigo_lector" required>
+            <option value="">Seleccionar lector</option>
+            {% for lector in lectores %}
+                <option value="{{ lector.codigo }}">
+                    {{ lector.nombre }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">➕ Registrar préstamo</button>
+
+    </form>
+
+    <h2>Préstamos registrados</h2>
+
+    {% if prestamos %}
+        <table border="1" cellpadding="10" cellspacing="0" width="100%">
+            <tr>
+                <th>Libro</th>
+                <th>Lector</th>
+                <th>Fecha de préstamo</th>
+                <th>Fecha de devolución</th>
+                <th>Estado</th>
+            </tr>
+
+            {% for prestamo in prestamos %}
+            <tr>
+                <td>{{ prestamo.codigo_libro }}</td>
+                <td>{{ prestamo.codigo_lector }}</td>
+                <td>{{ prestamo.fecha_prestamo }}</td>
+                <td>{{ prestamo.fecha_devolucion }}</td>
+                <td>{{ prestamo.estado }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>Todavía no hay préstamos registrados.</p>
+    {% endif %}
+   </div>
+        </main>
+
+    </div>
+
+</body>
+</html>

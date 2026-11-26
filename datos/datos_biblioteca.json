@@ -1,9 +1,9 @@
 {
     "libros": [
         {
-            "codigo": "l001",
-            "titulo": "el prinncipito",
-            "autor": "Antoine de Saint-Exupéry",
+            "codigo": "L003",
+            "titulo": "Cien años de soledad",
+            "autor": "Gabriel García Márquez",
             "disponible": true
         }
     ],
@@ -11,6 +11,10 @@
         {
             "codigo": "E001",
             "nombre": "Juan Perez"
+        },
+        {
+            "codigo": "E002",
+            "nombre": "Carlos Mendoza"
         }
     ],
     "prestamos": [
@@ -19,6 +23,38 @@
             "codigo_lector": "E001",
             "fecha_prestamo": "2026-11-25",
             "fecha_devolucion": "2026-12-02",
+            "estado": "Devuelto",
+            "multa": 0.0
+        },
+        {
+            "codigo_libro": "l002",
+            "codigo_lector": "E002",
+            "fecha_prestamo": "2026-11-25",
+            "fecha_devolucion": "2026-12-02",
+            "estado": "Devuelto",
+            "multa": 0.0
+        },
+        {
+            "codigo_libro": "l001",
+            "codigo_lector": "E001",
+            "fecha_prestamo": "2026-11-25",
+            "fecha_devolucion": "2026-12-02",
+            "estado": "Devuelto",
+            "multa": 0.0
+        },
+        {
+            "codigo_libro": "l001",
+            "codigo_lector": "E001",
+            "fecha_prestamo": "2026-11-26",
+            "fecha_devolucion": "2026-12-03",
+            "estado": "Devuelto",
+            "multa": 0.0
+        },
+        {
+            "codigo_libro": "L003",
+            "codigo_lector": "E002",
+            "fecha_prestamo": "2026-11-26",
+            "fecha_devolucion": "2026-12-03",
             "estado": "Devuelto",
             "multa": 0.0
         }
