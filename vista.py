@@ -1,6 +1,7 @@
 
 def mostrar_menu() -> None:
     """Muestra las opciones principales del sistema."""
+    # Presenta las opciones disponibles para el usuario.
     print("\n====================================")
     print("   SISTEMA DE PRÉSTAMO DE LIBROS")
     print("====================================")
