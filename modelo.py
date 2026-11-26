@@ -3,6 +3,7 @@ import json
 import os
 from datetime import date, timedelta
 
+# Archivo JSON donde se almacena la información de la biblioteca.
 ARCHIVO = "datos/datos_biblioteca.json"
 
 libros = []
